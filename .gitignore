@@ -1,2 +1,4 @@
 *
+!*/
 !.gitignore
+!/hello-world/hello_world.exs
