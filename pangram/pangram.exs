@@ -16,7 +16,7 @@ defmodule Pangram do
   def pangram?(sentence) do
     MapSet.subset?(
       MapSet.new(?a..?z),
-      MapSet.new(sentence |> String.downcase |> String.to_charlist)
+      MapSet.new(sentence |> String.downcase() |> String.to_charlist())
     )
   end
 end

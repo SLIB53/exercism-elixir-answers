@@ -29,7 +29,7 @@ defmodule NucleotideCount do
   def histogram(strand) do
     Map.new(
       @nucleotides,
-      &({&1, count(strand, &1)})
+      &{&1, count(strand, &1)}
     )
   end
 end
