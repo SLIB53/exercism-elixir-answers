@@ -23,7 +23,7 @@ defmodule Bob do
   # String parsing library
   #
 
-  def is_only_capital_letters?(string) do
+  defp is_only_capital_letters?(string) do
     case String.trim(string) != "" do
       true ->
         String.graphemes(string)
@@ -33,7 +33,7 @@ defmodule Bob do
     end
   end
 
-  def has_only_capital_letters?(string) do
+  defp has_only_capital_letters?(string) do
     is_only_capital_letters?(
       _letters = 
         Regex.scan(~r/\p{L}/u, string)
