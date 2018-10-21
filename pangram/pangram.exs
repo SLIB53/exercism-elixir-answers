@@ -14,14 +14,9 @@ defmodule Pangram do
 
   @spec pangram?(String.t()) :: boolean
   def pangram?(sentence) do
-    sanitized =
-      sentence |> String.trim |> String.downcase
-
-    ascii_letters = Regex.scan(~r/[a-z]/, sanitized)
-
-    num_unique_ascii_letters =
-      ascii_letters |> MapSet.new |> MapSet.size
-
-    num_unique_ascii_letters == 26
+    MapSet.subset?(
+      MapSet.new(?a..?z),
+      MapSet.new(sentence |> String.downcase |> String.to_charlist)
+    )
   end
 end
