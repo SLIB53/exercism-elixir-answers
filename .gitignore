@@ -3,3 +3,4 @@
 !.gitignore
 !/hello-world/hello_world.exs
 !/bob/bob.exs
+!/nucleotide-count/nucleotide_count.exs
