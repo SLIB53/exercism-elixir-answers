@@ -6,3 +6,4 @@
 !/nucleotide-count/nucleotide_count.exs
 !/pangram/pangram.exs
 !/queen-attack/queen_attack.exs
+!/protein-translation/protein_translation.exs
