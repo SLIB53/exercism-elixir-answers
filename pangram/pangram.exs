@@ -16,7 +16,12 @@ defmodule Pangram do
   def pangram?(sentence) do
     MapSet.subset?(
       MapSet.new(?a..?z),
-      MapSet.new(sentence |> String.downcase() |> String.to_charlist())
+      MapSet.new(parse_letters_and_symbols(sentence))
     )
+  end
+
+  @spec parse_letters_and_symbols(String.t()) :: charlist
+  defp parse_letters_and_symbols(s) do
+    s |> String.downcase() |> String.to_charlist()
   end
 end
