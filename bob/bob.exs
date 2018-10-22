@@ -1,20 +1,19 @@
 defmodule Bob do
+  @type phrase :: String.t
+
+  @spec hey(phrase) :: String.t
   def hey(input) do
     cond do
-      # empty
-      input |> String.trim() |> String.length() == 0 ->
+      empty_phrase?(input) ->
         "Fine. Be that way!"
 
-      # yelled
-      has_only_capital_letters?(input) ->
-        if String.ends_with?(input, "?") do
-          "Calm down, I know what I'm doing!"
-        else
-          "Whoa, chill out!"
-        end
+      upcase_letters?(input) and question?(input) ->
+        "Calm down, I know what I'm doing!"
 
-      # asked question
-      String.ends_with?(input, "?") ->
+      upcase_letters?(input) ->
+        "Whoa, chill out!"
+
+      question?(input) ->
         "Sure."
 
       true ->
@@ -22,27 +21,21 @@ defmodule Bob do
     end
   end
 
-  #
-  # String parsing library
-  #
-
-  defp is_only_capital_letters?(string) do
-    case String.trim(string) != "" do
-      true ->
-        String.graphemes(string)
-        |> Enum.all?(fn c -> String.downcase(c) != c end)
-
-      false ->
-        false
-    end
+  # Checks if a phrase is empty. Ex. "", "  "
+  @spec empty_phrase?(phrase) :: boolean
+  defp empty_phrase?(p) do
+    p |> String.trim() |> String.length() == 0
   end
 
-  defp has_only_capital_letters?(string) do
-    is_only_capital_letters?(
-      _letters =
-        Regex.scan(~r/\p{L}/u, string)
-        |> List.flatten()
-        |> List.to_string()
-    )
+  # Checks if every letter in a phrase is capitalized.
+  @spec upcase_letters?(phrase) :: boolean
+  defp upcase_letters?(p) do
+    String.upcase(p) == p and String.downcase(p) != p
+  end
+
+  # Checks if a phrase is a question.
+  @spec question?(phrase) :: boolean
+  defp question?(p) do
+    String.ends_with?(p, "?")
   end
 end
