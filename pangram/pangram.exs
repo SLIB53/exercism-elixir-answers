@@ -5,13 +5,11 @@ defmodule Pangram do
 
   Returns a boolean.
 
-    ## Examples
+  ## Example
 
-      iex> Pangram.pangram?("the quick brown fox jumps over the lazy dog")
-      true
-
+  iex> Pangram.pangram?("the quick brown fox jumps over the lazy dog")
+  true
   """
-
   @spec pangram?(String.t()) :: boolean
   def pangram?(sentence) do
     MapSet.subset?(
