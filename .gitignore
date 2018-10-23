@@ -9,3 +9,4 @@
 !/protein-translation/protein_translation.exs
 !/queen-attack/queen_attack.exs
 !/run-length-encoding/rle.exs
+!/word-count/word_count.exs
