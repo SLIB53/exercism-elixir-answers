@@ -19,6 +19,6 @@ Execute the tests with:
 $ elixir word_count_test.exs
 ```
 
-<!-- ## Source
+## Source
 
-- [This solution on exercism]() -->
+- [This solution on exercism](https://exercism.io/tracks/elixir/exercises/word-count/solutions/275eff71fc9f43e78bc3f13fed3fc4bd)
