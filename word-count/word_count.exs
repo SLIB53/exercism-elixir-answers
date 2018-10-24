@@ -6,12 +6,12 @@ defmodule Words do
   """
   @spec count(String.t()) :: map
   def count(sentence) do
-    sentence |> parse_words() |> to_count_map()
+    sentence |> detect_words() |> to_count_map()
   end
 
-  # Case-insensitively gets words in sentence. Returned words are lowercase.
-  @spec parse_words(String.t()) :: [String.t()]
-  defp parse_words(sentence) do
+  # Lists words in sentence. Returned words are lowercase.
+  @spec detect_words(String.t()) :: [String.t()]
+  defp detect_words(sentence) do
     Regex.scan(~r/[\p{L}[:digit:]'-]+/u, sentence)
     |> Enum.map(fn [w] -> String.downcase(w) end)
   end
