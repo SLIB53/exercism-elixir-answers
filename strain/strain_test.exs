@@ -3,7 +3,7 @@ if !System.get_env("EXERCISM_TEST_EXAMPLES") do
 end
 
 ExUnit.start()
-ExUnit.configure(trace: true, exclude: :pending)
+ExUnit.configure(trace: true)
 
 defmodule StrainTest do
   use ExUnit.Case
