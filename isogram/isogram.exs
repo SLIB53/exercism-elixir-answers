@@ -10,7 +10,7 @@ defmodule Isogram do
 
   # Returns a list of letters found in a word or sentence for comparison.
   # The returned letters are normalized to lowercase.
-  @spec detect_letters(String.t()) :: [char]
+  @spec detect_letters(String.t()) :: [String.t()]
   defp detect_letters(sentence) do
     Regex.scan(~r/\p{L}\p{M}*+/u, String.downcase(sentence))
     |> Enum.map(fn [l] -> l end)
