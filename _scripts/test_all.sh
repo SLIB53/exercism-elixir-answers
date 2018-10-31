@@ -1,5 +1,7 @@
 #!/bin/env sh
 
+# Must run from the project root directory!
+
 # Runs tests for each exercise, exiting with 1 if a test fails. Tests are found
 # by convention, where the test is an elixir script ending with "_test.exs".
 

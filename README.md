@@ -21,7 +21,13 @@ elixir <solution_dir>/<solution_name>_test.exs
 To run all the tests, use the `test_all.sh` script.
 
 ```sh
-sh test_all.sh
+sh _scripts/test_all.sh
+```
+
+Alternatively, tests can be run from a container using the ['Test.Dockerfile'](./Test.Dockerfile).
+
+```sh
+docker build --file TestAll.Dockerfile -- .
 ```
 
 [exercism]: https://exercism.io
