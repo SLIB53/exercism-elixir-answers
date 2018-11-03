@@ -24,10 +24,10 @@ To run all the tests, use the `test_all.sh` script.
 sh _scripts/test_all.sh
 ```
 
-Alternatively, tests can be run from a container using the ['Test.Dockerfile'](./Test.Dockerfile).
+Alternatively, tests can be run from a container using the ['Dockerfile'](Dockerfile). Test will run on build.
 
 ```sh
-docker build --file TestAll.Dockerfile -- .
+docker build --tag exercism-elixir-answers:latest .
 ```
 
 [exercism]: https://exercism.io
