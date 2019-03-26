@@ -14,12 +14,12 @@ defmodule Pangram do
   def pangram?(sentence) do
     MapSet.subset?(
       MapSet.new(?a..?z),
-      MapSet.new(parse_letters_and_symbols(sentence))
+      MapSet.new(detect_letters_and_symbols(sentence))
     )
   end
 
-  @spec parse_letters_and_symbols(String.t()) :: charlist
-  defp parse_letters_and_symbols(s) do
+  @spec detect_letters_and_symbols(String.t()) :: charlist
+  defp detect_letters_and_symbols(s) do
     s |> String.downcase() |> String.to_charlist()
   end
 end

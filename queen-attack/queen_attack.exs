@@ -5,8 +5,8 @@ defmodule Queens do
   @doc """
   Creates a new set of Queens
   """
-  @spec new() :: Queens.t()
   @spec new({integer, integer}, {integer, integer}) :: Queens.t()
+  @spec new() :: Queens.t()
   def new(white_and_black, white_and_black) do
     raise ArgumentError, message: "invalid positions"
   end
