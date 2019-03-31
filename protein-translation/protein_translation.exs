@@ -48,7 +48,7 @@ defmodule ProteinTranslation do
   UAG -> STOP
   UGA -> STOP
   """
-  @spec of_codon(String.t()) :: {atom, String.t()}
+  @spec of_codon(String.t()) :: {:ok | :error, String.t()}
 
   def of_codon("UGU"), do: {:ok, "Cysteine"}
 

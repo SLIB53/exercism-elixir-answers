@@ -1,6 +1,7 @@
 defmodule Queens do
-  @type t :: %Queens{black: {integer, integer}, white: {integer, integer}}
   defstruct black: nil, white: nil
+
+  @type t :: %Queens{black: {integer, integer}, white: {integer, integer}}
 
   @doc """
   Creates a new set of Queens

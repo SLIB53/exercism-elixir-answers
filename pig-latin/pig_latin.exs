@@ -18,6 +18,8 @@ defmodule PigLatin do
     String.split(phrase) |> Enum.map_join(" ", &translate_word/1)
   end
 
+  # Given a `word`, translates it to pig latin.
+  @spec translate(phrase :: String.t()) :: String.t()
   defp translate_word(word) do
     case analyze_start(word) do
       {:ok, :vowel, _start, _rest} ->
@@ -37,8 +39,13 @@ defmodule PigLatin do
     end
   end
 
+  # Add "ay" to end of string.
+  @spec append_ay(word :: String.t()) :: String.t()
   defp append_ay(word), do: word <> "ay"
 
+  # Inspect the start of a string for pig latin rules.
+  @spec analyze_start(word :: String.t()) ::
+          {:ok, :vowel | :like_vowel | :consonant, String.t(), String.t()}
   defp analyze_start("a" <> rest), do: {:ok, :vowel, "a", rest}
   defp analyze_start("e" <> rest), do: {:ok, :vowel, "e", rest}
   defp analyze_start("i" <> rest), do: {:ok, :vowel, "i", rest}
