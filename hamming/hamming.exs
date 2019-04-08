@@ -10,13 +10,7 @@ defmodule Hamming do
   @spec hamming_distance([char], [char]) :: {:ok | :error, non_neg_integer | String.t()}
   def hamming_distance(strand1, strand2)
       when length(strand1) === length(strand2) do
-    sum =
-      Enum.zip(strand1, strand2)
-      |> Enum.count(fn
-        {n1, n2} -> n1 !== n2
-      end)
-
-    {:ok, sum}
+    {:ok, Enum.zip(strand1, strand2) |> Enum.count(fn {n1, n2} -> n1 !== n2 end)}
   end
 
   def hamming_distance(_strand1, _strand2) do
