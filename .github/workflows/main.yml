@@ -10,7 +10,5 @@ jobs:
     steps:
     - name: Checkout repo
       uses: actions/checkout@v1
-    - name: Run from elixir docker image
-      uses: docker://elixir:alpine
     - name: Run tests
       run: docker build --tag exercism-elixir-answers:latest .
