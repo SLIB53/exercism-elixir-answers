@@ -13,4 +13,4 @@ jobs:
     - name: Run from elixir docker image
       uses: docker://elixir:alpine
     - name: Run tests
-      run: sh _scripts/test_all.sh
+      run: docker build --tag exercism-elixir-answers:latest .
