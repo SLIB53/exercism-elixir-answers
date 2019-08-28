@@ -1,0 +1,16 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v1
+    - name: Run from elixir docker image
+      uses: docker://elixir:alpine
+    - name: Run tests
+      run: sh _scripts/test_all.sh
