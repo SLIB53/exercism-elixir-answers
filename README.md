@@ -1,8 +1,6 @@
 Exercism Elixir Answers
 ================================================================================
 
-[![Build Status](https://travis-ci.com/SLIB53/exercism-elixir-answers.svg?branch=master)](https://travis-ci.com/SLIB53/exercism-elixir-answers)
-
 [Exercism.io][exercism] provides practice problems and mentorship for just about any programming langauge. This repository contains my solutions to the ["Elixir Track"][exercism-elixir-track]. Solving problems in Elixir is vastly different from solving problems in the more C like languages, so these exercises are a great way to engage in the Erlang/Elixir way of thinking.
 
 Each folder contains a solution and the corresponding tests from exercism. If you are an exercism member, you can click the link in the "Source" section of a solution's README to view the solution I submitted on exercism.
